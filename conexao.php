@@ -1,6 +1,6 @@
 <?php
 	$servidor = "localhost";
-	$usuario = "";
+	$usuario = "root";
 	$senha = "";
 	$dbname = "evento";
 	
@@ -8,7 +8,6 @@
      
         	//Criar a conexao
 	$conn = mysqli_connect( $servidor , $usuario , $senha , $dbname);
-    echo "Conexão realizado com sucesso";
     }catch (PDOException $e){
         
         die("Não foi possível realiza conexão!". $e->getMessage());

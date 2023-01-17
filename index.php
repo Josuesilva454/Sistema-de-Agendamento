@@ -1,5 +1,6 @@
 <?php
 session_start();
+print_r($_SESSION);
 include_once("conexao.php");
 $result_events = "SELECT id, titulo, cor, hora, saida FROM eventos";
 $resultado_events = mysqli_query($conn, $result_events);
@@ -44,6 +45,7 @@ $resultado_events = mysqli_query($conn, $result_events);
 					selectable: true,
 					selectHelper: true,
 					select: function(start, end){
+						//passando os valores
 						$('#cadastrar #hora').val(moment(start).format('DD/MM/YYYY HH:mm:ss'));
 						$('#cadastrar #saida').val(moment(end).format('DD/MM/YYYY HH:mm:ss'));
 						$('#cadastrar').modal('show');						
